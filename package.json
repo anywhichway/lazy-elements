@@ -1,15 +1,15 @@
 {
-  "name": "wired-elements",
+  "name": "lazy-elements",
   "version": "0.0.1-a",
   "description": "Single page apps with minimal custom JavaScript or client build processes",
   "type": "module",
-  "main": "wired-elements.js",
+  "main": "lazy-elements.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anywhichway/wired-elements.git"
+    "url": "git+https://github.com/anywhichway/lazy-elements.git"
   },
   "keywords": [
     "Turbo",
@@ -22,7 +22,7 @@
   "author": "Simon Y. Blackwell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anywhichway/wired-elements/issues"
+    "url": "https://github.com/anywhichway/lazy-elements/issues"
   },
-  "homepage": "https://github.com/anywhichway/wired-elements#readme"
+  "homepage": "https://github.com/anywhichway/lazy-elements#readme"
 }

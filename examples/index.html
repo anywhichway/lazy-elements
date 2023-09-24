@@ -7,10 +7,10 @@
 <body>
 <script type="module">
     import {Hono} from "https://esm.sh/hono";
-    import {enable,wiredRouter} from "../wired-elements.js";
-    import {WiredFrame} from "../wired-frame.js";
-    WiredFrame.define();
-    enable({router:wiredRouter({router:new Hono()})});
+    import {enable,lazyElementRouter} from "../lazy-elements.js";
+    import {LazyFrame} from "../lazy-frame.js";
+    LazyFrame.define();
+    enable({router:lazyElementRouter({router:new Hono()})});
 </script>
 <a href="./otherpage.html" target="#othertarget">Hello</a>
 <div data-controller="./hello.js" data-src="./hello.html">

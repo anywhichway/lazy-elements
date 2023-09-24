@@ -1,4 +1,4 @@
-import {createNavigationHandler, createPopStateHandler, wire} from "./wired-elements.js";
+import {createNavigationHandler, createPopStateHandler, wire} from "./lazy-elements.js";
 class WiredHistory {
 
     #position = 0;
@@ -40,12 +40,12 @@ class WiredHistory {
         this.#history[this.#position] = state;
     }
 }
-class WiredFrame extends HTMLElement {
+class LazyFrame extends HTMLElement {
 
     #history;
 
     static define() {
-        customElements.define("wired-frame",WiredFrame);
+        customElements.define("lazy-frame",LazyFrame);
     }
     constructor(body) {
         super();
@@ -83,4 +83,4 @@ class WiredFrame extends HTMLElement {
 }
 
 
-export {WiredFrame,WiredFrame as default}
+export {LazyFrame,LazyFrame as default}

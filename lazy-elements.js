@@ -244,7 +244,7 @@ function activateController (el) {
     });
 }
 
-const wiredRouter = ({router,allowRemote= false,root=document,all=(c) => fetch(c.req.raw)}={}) => {
+const lazyElementRouter = ({router,allowRemote= false,root=document,all=(c) => fetch(c.req.raw)}={}) => {
     router.get("*",async (c,next) => {
         const url = new URL(c.req.url,document.baseURI),
             node = root.querySelector(`[data-href="${allowRemote ? c.req.url : url.pathname}"]`);
@@ -350,4 +350,4 @@ const enable =(options={}) => {
     });
 }
 
-export { wiredRouter, enable, createPopStateHandler, createNavigationHandler, wire}
+export { lazyElementRouter, enable, createPopStateHandler, createNavigationHandler, wire}
