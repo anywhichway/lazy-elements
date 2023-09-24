@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="module">
+    import {Hono} from "https://esm.sh/hono";
+    import {enable,wiredRouter} from "../wired-elements.js";
+    import {WiredFrame} from "../wired-frame.js";
+    WiredFrame.define();
+    enable({router:wiredRouter({router:new Hono()})});
+</script>
+<a href="./otherpage.html" target="#othertarget">Hello</a>
+<div data-controller="./hello.js" data-src="./hello.html">
+
+</div>
+<div data-controller="./hello.js" data-stream="./hello-stream.js">
+
+</div>
+<div id="othertarget"></div>
+<div id="parenttarget"></div>
+
+<form action="./formresponse.html" target="#formtarget">
+    <input type="text" name="name" placeholder="name" value="John">
+    <input type="submit" value="submit">
+</form>
+<div id="formtarget"></div>
+<!--l-frame data-src data-controller data-bind>a custom element with events captured in shadow dom</l-frame-->
+<wired-frame target="_parent.#parenttarget">
+    <div>Frame!
+        <div data-controller="./hello.js" data-src="./hello.html">
+
+        </div>
+        <a href="./otherpage.html" target="#othertarget">Hello</a>
+        <div id="othertarget"></div>
+        <a href="./otherpage.html">Parent Target</a>
+        <button onclick="((event) => { event.target.dispatchEvent(new CustomEvent('back',{bubbles:true,composed:true}))})(event)">Back</button>
+        <button onclick="((event) => { event.target.dispatchEvent(new CustomEvent('forward',{bubbles:true,composed:true}))})(event)">Forward</button>
+    </div>
+</wired-frame>
+
+<template data-href="/"><h1>Home From Template</h1></template>
+<template data-href="/sample.json" data-header-content-type="application/json">
+    {"test":"test"}
+</template>
+
+<a href="/" target="_self">Local Home</a>
+
+<a href="/sample.json" target="_self">Local JSON</a>
+</body>
+</html>
