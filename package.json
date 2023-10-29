@@ -1,6 +1,6 @@
 {
   "name": "lazy-elements",
-  "version": "0.0.1-a",
+  "version": "0.0.2-a",
   "description": "Single page apps with minimal custom JavaScript or client build processes",
   "type": "module",
   "main": "lazy-elements.js",

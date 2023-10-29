@@ -1,4 +1,6 @@
-# lazy-elments v0.0.1-a
+# lazy-elements v0.0.2-a
+
+This project has been deprecated din favor of [lazui](https://github.com/anywhichway/lazui).
 
 Single page apps with minimal custom JavaScript or client build processes. Similar to [Turbo](https://turbo.hotwired.dev/)
 and [Stimulus](https://stimulus.hotwired.dev/), but less opinionated and with a router and some other goodies.
